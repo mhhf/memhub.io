@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   .left, .right {
     width: 47%;
-    height: 400px;
+    height: 600px;
   }
   .left {
     float: left;
@@ -28,6 +28,13 @@ h1, h2, h3, h4, h5 {
   .right {
     float: right;
   }
+  #archy {
+    height: 600px;
+  }
+  textarea {
+    width: calc(100% - 10px);
+  }
+
 }
 table {
     border-collapse: collapse;
@@ -177,6 +184,16 @@ code{
       padding: 10px 10px;
       display: block;
       width: calc(100% - 20px);
+      overflow: scroll;
     }
     border-radius: 4px;
+}
+
+p.eq {
+  padding: 10px 0;
+  > .katex {
+    display: block;
+    margin-left: 35px;
+    padding: 2px 0;
+  }
 }

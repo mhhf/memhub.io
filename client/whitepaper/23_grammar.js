@@ -1,40 +1,45 @@
 md_23 = `
 ### 2.2.2 regular grammar
-In theoretical computer science a description schema to come up with a type set is a grammar, in our case a regular grammar.
+In theoretical computer science a description schema to come up with a language is a grammar, in our case a regular grammar.
 
 A regular grammar is a composition out of the rules: concatenation, alternative and Kleene.
 Formal it is:
 * set of terminals $T$ (types: e.g. String, Image, Boolean, Number, ...)
-* set of nonterminals $N$ (Contexts - such as \"UI\", \"Name\", etc. )
+* set of nonterminals $N$ (Contexts - such as \"UI\", \"NameContext\", etc. )
 * start rule $S$, which has to be a Nonterminal (e.g. \"Start\")
-* set of production rules with the form: $P \\rightarrow t P'$ or $P \\rightarrow t$
+* set of production rules with the form: $P \\rightarrow t P'$, $P \\rightarrow t$ or $P \\rightarrow \\varepsilon$ ($\\varepsilon$ is the empty production)
 
-The \"WIP Name + Logo\" type looks like following in a grammar $G$:
+The \"WIP Name + Logo\" language looks like following in a grammar description $G$:
 
-$T = \\lbrace String, Image \\rbrace$
+<p class="eq">
+  $T = \\lbrace String, Image \\rbrace$
+  $N = \\lbrace Start, ImageCtx, ImageDescriptionCtx \\rbrace$
+  $S = Start$
+  $P = \\lbrace$
+  $  Start \\rightarrow String \\cdot ImageCtx, $
+  $  Start \\rightarrow String\\cdot ImageDescriptionCtx, $
+  $  ImageCtx \\rightarrow Image, $
+  $  ImageDescriptionCtx \\rightarrow String \\cdot ImageDescriptionCtx, $
+  $  ImageDescriptionCtx \\rightarrow \\varepsilon $
+  $ \\rbrace$
+</p>
 
-$N = \\lbrace Start, ImageCtx, ImageDescriptionCtx \\rbrace$
+The grammar is a way to describe the language, by starting with the Start rule and following the production rules untill the end. With this one can proof or disproof the validity of a candidate.
 
-$S = Start$
-\`\`\`sh
-T= String, Image
-N= Start, ImageCtx, ImageDescriptionCtx
-S= Start
-P=
-  Start -> String ImageCtx
-  Start -> String ImageDescriptionCtx
-  ImageCtx -> Image
-  ImageDescriptionCtx -> String ImageDescriptionCtx
-  ImageDescriptionCtx ->
-\`\`\`
+For example the type: $(String\\cdot String)$ can be derived via:
 
-The grammar is a way to describe the type set. Starting with the Start rule and following the production rules untill the end one can proof or disproof the validity of a candidate.
+<p class="eq">
+  $Start$ 
 
-For Example the Type: \`String String\` can be derived via:
+  $\\rightarrow String\\cdot ImageDescriptionCtx $
 
-Start -> String ImageDescriptionCtx -> String String ImageDescriptionCtx -> String String
+  $\\rightarrow String\\cdot String\\cdot ImageDescriptionCtx $
 
-Which is a proof for the candidate: \`"Catcorp" "Black and White Image"\`.
+  $\\rightarrow String\\cdot String $
+</p>
 
-We can restrict an organization to a Grammar: $O_G$
+This is a **proof** that the candidate: $"Catcorp" \\cdot "Black\\, and\\, White\\, Image"$ is valid in G.
+
+We can restrict an organization to the defined grammar: $O_G$ which will handle the candidate validation
+for us.
 `;

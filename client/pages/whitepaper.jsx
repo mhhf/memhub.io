@@ -59,9 +59,12 @@ Whitepaper = React.createClass({
       md_20, // illustration
       md_21, // consensus
       md_22, // optimisation
+      md_222,
       md_23, //
       md_24,  // evolution
-      md_30  // implementation
+      md_25,
+      md_30,  // implementation
+      md_40
     ];
 
     paper = paper.map(md => md.replace(/\$\$([^\$]*)\$\$/gm, function(a,b) {
@@ -74,6 +77,7 @@ Whitepaper = React.createClass({
     let content = {__html: paper.map(md => marked(md)).join('')};
     return <div className="whitepaper">
       <div dangerouslySetInnerHTML={content} />
+      <SchemaForm />
     </div>;
   }
 });
