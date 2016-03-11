@@ -1,13 +1,13 @@
 md_23 = `
 ### 2.2.2 regular grammar
-In theoretical computer science a description schema to come up with a language is a grammar, in our case a regular grammar.
+In theoretical computer science a description schema to produce a language is a grammar, in our case a regular grammar.
 
 A regular grammar is a composition out of the rules: concatenation, alternative and Kleene.
-Formal it is:
+Formally it is:
 * set of terminals $T$ (types: e.g. String, Image, Boolean, Number, ...)
 * set of nonterminals $N$ (Contexts - such as \"UI\", \"NameContext\", etc. )
 * start rule $S$, which has to be a Nonterminal (e.g. \"Start\")
-* set of production rules with the form: $P \\rightarrow t P'$, $P \\rightarrow t$ or $P \\rightarrow \\varepsilon$ ($\\varepsilon$ is the empty production)
+* set of production rules in one of the following forms: $P \\rightarrow t P'$, $P \\rightarrow t$ or $P \\rightarrow \\varepsilon$ ($\\varepsilon$ is the empty production)
 
 The \"WIP Name + Logo\" language looks like following in a grammar description $G$:
 
@@ -26,7 +26,7 @@ The \"WIP Name + Logo\" language looks like following in a grammar description $
 
 The grammar is a way to describe the language, by starting with the Start rule and following the production rules untill the end. With this one can proof or disproof the validity of a candidate.
 
-For example the type: $(String\\cdot String)$ can be derived via:
+For example the type: $(String\\cdot String)$ can be prooven via:
 
 <p class="eq">
   $Start$ 
@@ -38,8 +38,7 @@ For example the type: $(String\\cdot String)$ can be derived via:
   $\\rightarrow String\\cdot String $
 </p>
 
-This is a **proof** that the candidate: $"Catcorp" \\cdot "Black\\, and\\, White\\, Image"$ is valid in G.
+This is also a **proof** for the candidate: $"Catcorp" \\cdot "Black\\, and\\, White\\, Image"$.
 
-We can restrict an organization to the defined grammar: $O_G$ which will handle the candidate validation
-for us.
+We can restrict an organization to a grammar: $O_G$ which will handle the candidate validation.
 `;

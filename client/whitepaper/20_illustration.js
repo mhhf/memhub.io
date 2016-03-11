@@ -24,7 +24,7 @@ $$share: A \\rightarrow \\mathbb{N}$$
 The sum of all shares is called the **size** of this organization:
 $$|O|: = \\sum_{a \\in A} share\(a\)$$
 
-In our example Alice has an share of 40 which represents 40%, Bob 30, Charlie 20 and Dave 10.
+In our example Alice has 40 shares which represents 40%, Bob 30, Charlie 20 and Dave 10.
 
 <div id="chart1"></div>
 
@@ -34,7 +34,7 @@ Now everybody can propose a name:
 
 We can call all proposals - **candidates**. Our final candidate set looks like the following:
 <center class="oneline">
-$K=\\lbrace \\text{"Awesomecorp"}, \\text{"omg systems"},$ ![](cat.svg) $\\rbrace$
+$K=\\lbrace \\text{"Awesomecorp"}, \\text{"omg\\, systems"},$ ![](cat.svg) $\\rbrace$
 </center>
 
 
@@ -53,6 +53,6 @@ $$vote: A\\times K \\rightarrow [0,1]$$
 
 The organization now contains all information we need, to determine the actual winner:
 
-We define an organization state as a Tuple:
+We define an organization state as a tuple:
 $$O:=(A,K,<,share,vote)$$
 `;

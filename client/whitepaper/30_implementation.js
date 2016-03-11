@@ -13,20 +13,18 @@ Its acting on the vote matrix complements the vote matrix ("add the delegated vo
 Now the known consensus function is used to compute the consensus candidate out of the leaf nodes.
 
 
-
-
 ### 3.2 architecture
 
 The main part of an organisation is a contract on the ethereum blockchain described in 3.2.1. Users interact
 with the contract either through a command line interface or a graphical user interface described in 3.2.2.
 
 ### 3.2.1 On chain
-The current solidity contract can be found on [github.com](https://github.com/mhhf/mem/blob/develop/src/contracts/sol/org.sol). The code is under active development and in an experimental stadium.
+The current solidity contract can be found on [github.com](https://github.com/mhhf/mem/blob/develop/src/contracts/sol/org.sol). The code is under active development and in an experimental stage.
 
 
 <center> ![](actions.svg) </center>
 
-The core part of an organization is implemented on the Ethereum Blockchain. A user can
+The core part of an organization is implemented on the Ethereum blockchain. A user can
 iteract with it by either:
 * **createOrg** creating a new organization
 * **send**: sending shares from the own account to another actor
@@ -34,7 +32,7 @@ iteract with it by either:
 * **vote**: vote for an existing candidate
 * **delegate**: delegate his votes to another actor in a particular context
 * **getConsens**: ask for the current consens
-* **voteEvolution**: vote for a evolution step for the organization
+* **voteEvolution**: vote on a evolution step for the organization
 
 ##### 3.2.1.1 createOrg
 this creates a new organization
@@ -90,7 +88,7 @@ parameters:
 
 ### 3.2.2 Off chain
 
-Currently the off chain implementation is under active development and not in a working state.
+Currently the off chain implementation is under active development and not in a working stage.
 The current experimental implementation can be found [here](https://github.com/mhhf/mem/tree/develop).
 
 #### 3.2.2.1 CLI
@@ -188,9 +186,7 @@ This will trigger evolution as the new votes hit > 66% and the new grammar of st
 
 #### 3.2.2.1 GUI
 
-The GUI is not implemented yet, some components are defined. Here we will give an overview over them:
-
-Along with the CLI a GUI is provided which allows an easy interaction with organizations.
+The GUI is not implemented yet, but its major components already defined. Here we will give an overview over them:
 
 Requirements for an first abstraction layer:
 1. easy creation of languages
@@ -207,7 +203,7 @@ For the creation of a regular languages first we will take a subset of [JSON-sch
 JSON-schema is an easy readable and established standard for json type definition. A subset of Json-schemas, namely those which don't contain recursive references, can be taken to produce a regular grammars. We will take this subset to produce arbitrary languages for organizations.
 
 Json Schemas are mainly used to validate json objects and to generate forms to view and manipulate valid objects. Therefore Json-Schemas are a great tool to use to satisfy the requirements 1, 2, 3, 4, 5, 7.
-To introduce more simplicity for writing json schemas a form Builder can be introduced such as [this](https://github.com/Kinto/formbuilder) or many other similar.
+To achieve even more simplicity for writing json schemas a form Builder can be introduced such as [this](https://github.com/Kinto/formbuilder) or one of many others.
 Below is a demo of a Json-Schema, which produces an editable form and a regular grammar.
 For the tasks 6. and 8. custom GUI elements will be engineered.
 Evolution schemas (9.) will be created as solidity contracts, since they require complex operations, such as mapping and filtering the candidates and manipulating votes and delegations.

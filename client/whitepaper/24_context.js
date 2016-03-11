@@ -7,7 +7,7 @@ Imagine in our organization in the "WIP Name + Logo" language Alice is aware abo
 Also imagine that Bob thinks that at the current status, images should't be considered at all. He also likes the name "OMG Systems" so he votes 0.8 for the $"OMG\\, Systems"\\cdot ImageDescriptionCtx$. With this statement all candidates which can be derived out of this context by using the production of the organization will receive his vote. Note that also future coming candidates automatically receives his vote! This is called **contextual voting**.
 
 
-Lets see how our voting table looks:
+Lets see how our voting table looks
 
 |           | ("OMG Systems")  | ("cat corp", "Black and White Image")   | ("cat corp" ,![](cat.svg))
 ----------- | ---------------- | --------------------------------------- | ------------

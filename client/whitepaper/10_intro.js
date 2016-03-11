@@ -2,7 +2,7 @@ md_10 = `
 # Efficient Decentral Governance of Structured Data
 
 ## 1. Abstract
-> Imagine if you could not only vote for reddit posts, but govern the entire platform.
+> Imagine if you could not only vote for reddit posts, but govern the entire platform with your interactions.
 
 With the emergence of decentral organizations such as Bitcoin, Ethereum or Applications written on top of Ethereum new forms of governance are needed to direct and evolve this organizations. Such schemas need to be transparent, fair (influence is directly proportional to the ownership), accessible (easy to interact with), extendable, proposed candidates have to be previewable, and verifiable and decissions have to be automatically enforcible. Currently this is still an unsolved problem. In this paper, we analyze the problem space and propose a schema which could serve as a building block in the roadmap to a full self-governance solution.
 
