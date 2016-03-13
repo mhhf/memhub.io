@@ -89,8 +89,6 @@ SchemaForm = React.createClass({
           document.getElementById('regLang').value = g;
           document.getElementById('regLangS').value = s;
         } catch(e) {
-          throw e;
-          return false;
         }
       });
     });

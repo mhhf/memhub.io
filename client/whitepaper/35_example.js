@@ -8,8 +8,7 @@ The language could looks like this:
 
 \`\`\`sh
 standardABI:=(Interface Natspec)*
-Interface:= FunctionName FunctionParameter*
-          | FunctionName FunctionParameter* ReturnParameter*
+Interface:= FunctionName FunctionParameter* ReturnParameter*
 FunctionName := string
 FunctionParameter := Type Name
 ReturnParameter := Type Name
