@@ -1,3 +1,5 @@
+var toc = require('markdown-toc');
+
 Whitepaper = React.createClass({
   componentDidMount() {
     var chart = c3.generate({
@@ -63,8 +65,11 @@ Whitepaper = React.createClass({
       md_23, //
       md_24,  // evolution
       md_25,
+      md_26,
       md_30,  // implementation
-      md_40
+      md_35,
+      md_40,
+      md_50
     ];
 
     paper = paper.map(md => md.replace(/\$\$([^\$]*)\$\$/gm, function(a,b) {
@@ -74,6 +79,7 @@ Whitepaper = React.createClass({
       let html = katex.renderToString(b);
       return html;
     }));
+    // paper = [(toc(paper.join('')).content)].concat(paper);
     let content = {__html: paper.map(md => marked(md)).join('')};
     return <div className="whitepaper">
       <div dangerouslySetInnerHTML={content} />

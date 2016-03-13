@@ -4,6 +4,7 @@ digraph {
   lp[label="landing page"];
   mm[label="mindmap"];
   wip[label="WIP Name + Logo"];
+  pp[label="...", shape=none];
   rs[label="rocketship to the moon"];
   name -> bmc;
   bmc -> mm;
@@ -11,5 +12,5 @@ digraph {
   name -> lp;
   bmc -> lp;
   name -> wip -> lp;
-  lp -> rs;
+  lp -> pp -> rs;
 }

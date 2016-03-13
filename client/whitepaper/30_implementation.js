@@ -1,19 +1,19 @@
 md_30 = `
-## 3. Implementation
+## 4. Implementation
 
-### 3.1 data structures
+### 4.1 data structures
 To save space due to the linear structure of regular grammars, we can save all
-valid candidates in a prefix tree:
+valid candidates, contextual votes and delevations in a prefix tree:
 <center> ![](trie.png) </center>
 
-Also we assign delegations and votes to each node. Votes and delegations are inhereted to a "leaf" node.
+The tree is a compact representation, holding all nessecery information.
 
-In a leaf node the transitive hull of delegations is computed.
+Votes and delegations are inhereted to a "leaf" node where the transitive hull of delegations is computed.
 Its acting on the vote matrix complements the vote matrix ("add the delegated votes to the vote matrix for each actor which hasn't voted for himself").
 Now the known consensus function is used to compute the consensus candidate out of the leaf nodes.
 
 
-### 3.2 architecture
+### 4.2 architecture
 
 The main part of an organisation is a contract on the ethereum blockchain described in 3.2.1. Users interact
 with the contract either through a command line interface or a graphical user interface described in 3.2.2.
@@ -34,14 +34,14 @@ iteract with it by either:
 * **getConsens**: ask for the current consens
 * **voteEvolution**: vote on a evolution step for the organization
 
-##### 3.2.1.1 createOrg
+##### 4.2.1.1 createOrg
 this creates a new organization
 
 parameters:
 * bytes language: is a regular grammer
 * uint shares: initial size of the organization
 
-#### 3.2.1.2 send
+#### 4.2.1.2 send
 
 sends shares from the own account to a given actor.
 
@@ -49,7 +49,7 @@ parameters:
 * address to: the address of the actor who should receive the shares
 * uint value: the amount of shares to send
 
-#### 3.2.1.3 propose
+#### 4.2.1.3 propose
 
 propose a new candidate
 
@@ -57,7 +57,7 @@ parameters:
 * bytes data: serialized candidate data and context description
 * bytes type: serialized type description
 
-#### 3.2.1.4 vote
+#### 4.2.1.4 vote
 
 votes for a node in a prefix trie
 
@@ -65,7 +65,7 @@ parameters:
 * bytes32 nodeId: the id of the node
 * uint value: the rating of the node (0 - 1000)
 
-#### 3.2.1.5 delegate
+#### 4.2.1.5 delegate
 
 delegates the vote to another actor for a given context
 
@@ -73,11 +73,11 @@ parameters:
 * address to: the address of the delegate
 * bytes32 nodeId: the context - a node in the prefix trie
 
-#### 3.2.1.6 getConsens
+#### 4.2.1.6 getConsens
 
 returns a leaf node id which can be used to resolve the actual type and data of the consens candidate
 
-#### 3.2.1.7 voteEvolution
+#### 4.2.1.7 voteEvolution
 
 vote for an evolution for this organization, if its not proposed, propose it first
 
@@ -86,12 +86,12 @@ parameters:
 * uint value: the rating of the evolution (0 - 1000)
 
 
-### 3.2.2 Off chain
+### 4.2.2 Off chain
 
 Currently the off chain implementation is under active development and not in a working stage.
 The current experimental implementation can be found [here](https://github.com/mhhf/mem/tree/develop).
 
-#### 3.2.2.1 CLI
+#### 4.2.2.1 CLI - command line interface
 
 Here we show an example interaction with the contract over a command line interface for the example shown in section 2.1:
 
@@ -184,7 +184,7 @@ Great, we want to find a logo next. Therefore we also vote for the evolution wip
 
 This will trigger evolution as the new votes hit > 66% and the new grammar of startup becomes wip_name_and_logo with a single candidate - "OMG systems"
 
-#### 3.2.2.1 GUI
+#### 4.2.2.1 GUI - graphical user interface
 
 The GUI is not implemented yet, but its major components already defined. Here we will give an overview over them:
 
@@ -203,8 +203,8 @@ For the creation of a regular languages first we will take a subset of [JSON-sch
 JSON-schema is an easy readable and established standard for json type definition. A subset of Json-schemas, namely those which don't contain recursive references, can be taken to produce a regular grammars. We will take this subset to produce arbitrary languages for organizations.
 
 Json Schemas are mainly used to validate json objects and to generate forms to view and manipulate valid objects. Therefore Json-Schemas are a great tool to use to satisfy the requirements 1, 2, 3, 4, 5, 7.
-To achieve even more simplicity for writing json schemas a form Builder can be introduced such as [this](https://github.com/Kinto/formbuilder) or one of many others.
-Below is a demo of a Json-Schema, which produces an editable form and a regular grammar.
+To achieve even more simplicity for writing json schemas a form builder can be introduced such as [this](https://github.com/Kinto/formbuilder) or one of many others.
+In section 7. is a demo of a Json-Schema, which produces an editable form and a regular grammar.
 For the tasks 6. and 8. custom GUI elements will be engineered.
 Evolution schemas (9.) will be created as solidity contracts, since they require complex operations, such as mapping and filtering the candidates and manipulating votes and delegations.
 `;

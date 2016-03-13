@@ -1,5 +1,5 @@
 md_24 = `
-### 2.2.3 context
+### 3.3 context
 The nonterminals of a grammar can also be interpreted as a named context. This is handy for context based statements such as **contextual delegations**.
 
 Imagine in our organization in the "WIP Name + Logo" language Alice is aware about her terrible decision making for Logos. Here she can delegate her votes only in the context of ImageCtx to Charlie. Anyone still can make proposals, but Dave has a voting weight in the context of ImageCtx of 50%. In another context (like ImageDescriptionCtx) he still only has his initial voting weight of 10%.

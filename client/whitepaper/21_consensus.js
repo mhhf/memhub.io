@@ -1,5 +1,5 @@
 md_21 = `
-### consensus
+#### 2.2 consensus
 We can calculate the actual outcome by considering the votes for each candidate
 together with the shares of each voter:
 

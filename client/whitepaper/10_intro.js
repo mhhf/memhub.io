@@ -1,5 +1,8 @@
 md_10 = `
 # Efficient Decentral Governance of Structured Data
+Denis Erfurt
+
+The presended model is based on my bachelors thesis "A decentral transition system for the manipulation of shared words of a regular grammar." written in 2015 at the work group "Algorithms and Complexity" at the Humboldt-Universität zu Berlin and rated with "excellent". It can be found [here](https://github.com/mhhf/redisc-whitepaper/raw/master/notes/ba.pdf) (German version).
 
 ## 1. Abstract
 > Imagine if you could not only vote for reddit posts, but govern the entire platform with your interactions.
@@ -14,5 +17,5 @@ Efficient governance tries to optimize the amount of necessary interaction done 
 
 The main idea is the tightly coupled relationship of user interactions such as voting and delegations statements with a meta data structure.
 
-The paper is structured in the following way: first we introduce the problem space in 2.1. Based on this we discuss in 2.2 the role of data structures for governance, in particular those, which can be described with a regular grammar. In 2.3 a data structure migration schema is presented, which allows an organization to change its underlaying structure. In section 3 we present our current proof of concept implementation and discuss in 4. the roadmap for further iterations.
+The paper is structured in the following way: first we introduce the problem space and a general model for governance in 2. Based on this we introduce an extended model in 3. and discuss the role of data structures for governance, in particular those, which can be described with a regular grammar. In section 4 we present our current proof of concept implementation. In 5. an real world use case is given which illustrates the key value proposition of the presended model. In 4. we present the roadmap for further iterations.
 `;

@@ -1,7 +1,7 @@
 md_22 = `
-## 2.2 data structure
+## 3 extended model
 
-### 2.2.1 types
+### 3.1 types
 
 Did you notice what happened with Daves proposal? Didn't the organization initially agree to
 decide on a name? And ![](cat.svg) clearly isn't one.
@@ -24,13 +24,13 @@ e.g. $(\"catcorp\",$ ![](cat.svg) $):\\mathcal{L}_3$ would be a valid.
 md_222 =`
 Note here that the type $(String, Image)$ is a **composition** out of the type $String$ and the type $Image$, so composing types is a valid operation to produce another type. We can write composition with the dot notation: $String\\cdot Image$.
 
-Also we want to allow the Kleene operator for a language description:
+Also we want to allow the star operator for a language description:
 $\\mathcal{L}_4 = String*$ states that the type $String$ can be composed arbitrary times:
 $\\mathcal{L}_4=\\lbrace (), (String), (String, String), (String, String, String), ... \\rbrace$
 
 e.g. $(\"so\", \"much\", \"feature\"):\\mathcal{L}_4$ is valid.
 
-We can now use the operations (alternative, composition, Kleene) to describe a complex structure of our organization!
+We can now use the operations (alternative, composition, star) to describe a complex structure of our organization!
 
 An example for a complex language is $\\mathcal{L}_5=(String, ( Image | String* ) )=$\"WIP Name + Logo\":
 

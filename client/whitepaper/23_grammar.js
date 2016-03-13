@@ -1,5 +1,5 @@
 md_23 = `
-### 2.2.2 regular grammar
+### 3.2 regular grammar
 In theoretical computer science a description schema to produce a language is a grammar, in our case a regular grammar.
 
 A regular grammar is a composition out of the rules: concatenation, alternative and Kleene.

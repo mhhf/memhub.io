@@ -1,7 +1,7 @@
 md_20 = `
-## 2.1 illustration of the problem
+## 2 general model
 
-### governance
+#### 2.1 organization
 
 Suppose there is organization $O$ with is owned by Alice, Bob, Charlie and Dave
 who have agreed to find a name for it. This problem is kind of trivial, but we
@@ -34,7 +34,7 @@ Now everybody can propose a name:
 
 We can call all proposals - **candidates**. Our final candidate set looks like the following:
 <center class="oneline">
-$K=\\lbrace \\text{"Awesomecorp"}, \\text{"omg\\, systems"},$ ![](cat.svg) $\\rbrace$
+$K=\\lbrace "Awesomecorp", "omg\\, systems",$ ![](cat.svg) $\\rbrace$
 </center>
 
 
