@@ -5,6 +5,7 @@ html, body {
   background: #fafafa;
   color: #333;
   line-height: 1.4;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -196,5 +197,21 @@ p.eq {
     display: block;
     margin-left: 35px;
     padding: 2px 0;
+  }
+}
+
+
+body.landing {
+  background: url(bg.png) center -325px no-repeat;
+  height: calc( 100vh - 200px );
+  padding: 100px;
+  ul.links {
+    li {
+      display: inline-block;
+      padding: 0 8%;
+      &.demo img {
+        padding-bottom: 10px;
+      }
+    }
   }
 }

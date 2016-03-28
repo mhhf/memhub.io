@@ -1,5 +1,15 @@
 var toc = require('markdown-toc');
+var marked = require('marked');
 
+// // Async highlighting with pygmentize-bundled
+// marked.setOptions({
+//   highlight: function (code, lang, callback) {
+//     require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
+//       callback(err, result.toString());
+//     });
+//   }
+// });
+//
 Whitepaper = React.createClass({
   componentDidMount() {
     var chart = c3.generate({
@@ -56,21 +66,8 @@ Whitepaper = React.createClass({
     });
   },
   render() {
-    var paper = [
-      md_10, // intro
-      md_20, // illustration
-      md_21, // consensus
-      md_22, // optimisation
-      md_222,
-      md_23, //
-      md_24,  // evolution
-      md_25,
-      md_26,
-      md_30,  // implementation
-      md_35,
-      md_40,
-      md_50
-    ];
+
+    var paper = _.values(mkd);
 
     paper = paper.map(md => md.replace(/\$\$([^\$]*)\$\$/gm, function(a,b) {
       let html = `<center>${katex.renderToString(b)}</center>`;
