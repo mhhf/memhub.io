@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 0.10.43
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - ~/.meteor
+  override:
+    - sudo pip install --upgrade docker-compose==1.4.2
+    - meteor || curl https://install.meteor.com | /bin/sh
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./release.sh
