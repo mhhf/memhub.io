@@ -1,0 +1,14 @@
+web:
+  image: meteorhacks/meteord:base
+  ports:
+    - "80:80"
+  volumes:
+    - /bundle:/bundle
+  links:
+    - mongo
+  environment:
+    - MONGO_URL=mongodb://mongo/dapphub
+    - ROOT_URL=http://memhub.io
+
+mongo:
+  image: mongo:latest
