@@ -1,6 +1,7 @@
 #!/bin/sh
 set -x
 
+sudo "54.192.225.217 warehouse.meteor.com" >> /etc/hosts
 rm -fR node_modules
 cat package.json
 meteor npm install
