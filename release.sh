@@ -1,7 +1,7 @@
 #!/bin/sh
 set -x
 
-sudo "54.192.225.217 warehouse.meteor.com" >> /etc/hosts
+export METEOR_WAREHOUSE_URLBASE=https://d3fm2vapipm3k9.cloudfront.net
 rm -fR node_modules
 cat package.json
 meteor npm install
